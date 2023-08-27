@@ -13,6 +13,7 @@ justify-content: space-between;
 align-items: center;
 background-color:#7749F8;
 padding: 10px 20px;
+cursor: pointer;
 }
 
 .navbar-left {
@@ -20,6 +21,7 @@ margin-left: 5%;
 }
 
 .navbar-right {
+
 margin-right: 5%;
 }
 
@@ -43,6 +45,7 @@ text-align: left;
 max-width: 1200px;
 margin: 0 auto;
 padding: 0 7%;
+
 }
 
 .header-heading-left {

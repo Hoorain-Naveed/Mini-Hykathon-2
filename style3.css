@@ -124,7 +124,7 @@ body, label, input {
     flex-direction: column;
     margin-bottom: 20px;
   }
-  
+ 
   /* Style for labels */
   label {
     font-weight: bold;
@@ -153,4 +153,19 @@ body, label, input {
     padding-right: 40px; /* Ensure enough space for the icon */
     margin-top: -2%;
   }
+  .centre.img{
+    Width:80px;
+Height:80px;
+Top:635px;
+Left:188px;
+border-radius:15px;
+  }
+.centre{
+  margin-left: 14%;
+  font-size: 36px;
+
+  padding: 20px 0;
+text-align: left;
+
+}
   
