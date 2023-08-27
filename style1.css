@@ -77,3 +77,24 @@ margin-top: 15px;
 border: 1px solid #ccc;
 border-radius: 5px;
 }
+/* Reset default margin and padding for the whole page */
+body, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .custom-button {
+    margin-top: 4%;
+    display: inline-flex;
+    padding: 10px 16px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 6px;
+    background: var(--primary-color, #7749F8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

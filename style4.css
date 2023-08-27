@@ -1,0 +1,115 @@
+/* Reset default margin and padding for the whole page */
+body{
+    background-color: rgb(232, 230, 230);
+}
+body, h1 {
+margin: 0;
+padding: 0;
+}
+
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color:#7749F8;
+padding: 10px 20px;
+}
+
+.navbar-left {
+margin-left: 5%;
+}
+
+.navbar-right {
+margin-right: 5%;
+}
+
+.navbar-heading-left,
+.navbar-heading-right {
+color: white;
+font-size: 24px;
+}
+body, h1 {
+margin: 0;
+padding: 0;
+}
+
+.main-header {
+background-color: var(--default-white, #FFF);
+padding: 20px 0;
+text-align: left;
+}
+
+.header-content {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 7%;
+}
+
+.header-heading-left {
+color:black;
+font-size: 36px;
+}
+.container{
+    display: flex;
+width: 600px;
+height: 550px;
+padding: 24px;
+flex-direction: column;
+align-items: flex-start;
+margin-left: 3%;
+margin-top: 1%;
+gap: 16px;
+flex-shrink: 0;
+border-radius: 12px;
+border: 1px solid var(--gray-300, #DEE2E6);
+background: var(--default-white, #FFF);
+}
+.img{
+    width: 300.19px;
+height: 300px;
+flex-shrink: 0;
+border-radius: 30px;
+background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+.inputname{
+    display: flex;
+width: 325px;
+align-items: center;
+gap: 15px;
+}
+.password1{
+    height: 20%;
+    display: flex;
+padding: 9px 16px;
+align-items: center;
+gap: 8px;
+align-self: stretch;
+border-radius: 6px;
+border: 1px solid var(--primary-color, #7749F8);
+background: #FFF;
+box-shadow: 0px 0px 0px 3px rgba(102, 16, 242, 0.15);
+margin-left: 2%;
+}
+/* Basic styles for the responsive button */
+.responsive-button {
+    display: inline-flex;
+    padding: 10px 16px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 6px;
+    background: var(--primary-color, #7749F8);
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Media query for responsive adjustments */
+  @media (max-width: 768px) {
+    .responsive-button {
+      display: block;
+      width: 100%;
+    }
+  }
+  
