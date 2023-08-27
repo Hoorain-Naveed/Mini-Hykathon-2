@@ -1,0 +1,80 @@
+        /* Reset default margin and padding for the whole page */
+        body{
+            background-color: rgb(232, 230, 230);
+        }
+        body, h1 {
+            margin: 0;
+            padding: 0;
+          }
+          
+          .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:#7749F8;
+            padding: 10px 20px;
+          }
+          
+          .navbar-left {
+            margin-left: 5%;
+          }
+          
+          .navbar-right {
+            margin-right: 5%;
+          }
+          
+          .navbar-heading-left,
+          .navbar-heading-right {
+            color: white;
+            font-size: 24px;
+          }
+          body, h1 {
+            margin: 0;
+            padding: 0;
+          }
+          
+          .main-header {
+            background-color: var(--default-white, #FFF);
+            padding: 20px 0;
+            text-align: left;
+          }
+          
+          .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 7%;
+          }
+          
+          .header-heading-left {
+            color:black;
+            font-size: 36px;
+          }
+          
+          /* Reset default margin and padding for the whole page */
+          body, input {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          
+          .centered-div {
+            width: 416px;
+            height: 259px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            fill: var(--default-white, #FFF);
+filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.12))
+          }
+          
+          .input-field {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          }
+          
