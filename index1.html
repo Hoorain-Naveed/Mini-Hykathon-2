@@ -36,7 +36,7 @@
 
 <script type="Module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
-    import { getDatabase} from "https://www.gstatic.com/firebasejs/10.3.0/firebase-database.js";
+    import { getDatabase,set,ref} from "https://www.gstatic.com/firebasejs/10.3.0/firebase-database.js";
     import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
     
 
@@ -71,9 +71,26 @@
                 const b = alert("Your account successfully SIGNUP" + user)
                 alert(b)
 
-                window.location.href = "///C:/Users/Admin/OneDrive/Desktop/figma/index4.html"
+                const sanitizedEmail = email.replace(/[\.\#$\[\]]/g, '_');
+                
+            set(ref(database, "The Users" + sanitizedEmail), {
+                FistName: fname,
+                LastName: lname,
+                Email: email,
+                password: password,
+               
+              })
+
+                .then(() => {
+                    // Signed in 
+                    alert("datastored")
+                    window.location.href = "index3.html"
                 // ...
             })
+            .catch((error) => {
+              alert("data not stored")
+            })
+          
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -82,7 +99,7 @@
                 // ..
             });
     })
- 
+  })
 </script>
 
 

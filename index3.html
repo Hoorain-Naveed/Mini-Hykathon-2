@@ -13,8 +13,8 @@
           <h1 class="navbar-heading-left">Personal Blogging App</h1>
         </div>
         <div class="navbar-right">
-          <h1 class="navbar-heading-right">Login</h1>
-        </div>
+          <h1 class="navbar-heading-right"><a href="index2.html">LOGOUT</a></h1>
+        
       </nav>
 
       <header class="main-header">
@@ -32,21 +32,92 @@
     
         <div class="input-container">
             <label for="date" id="da">Date of Birth:</label>
-            <input type="date" id="date" class="input-field">
+            <input type="date" id="dat" class="input-field">
         </div>
-        <input type="text" class="input-field" placeholder="PLACEHOLDER">
-        <input type="email" class="input-field2" placeholder="What is in your mind">
-        <button class="colorful-button">Publish blog</button>
+        <input type="text" class="input-field"id="headin" placeholder="heading">
+        <input type="email" class="input-field2"id="text" placeholder="What is in your mind">
+        <button class="colorful-button"id="publish">Publish blog</button>
       </div>
       
 <div class="centre"><h1>MY BLOGS</h1>
-<div class="img"></div>
+</div>
 
-
-
+<div class="div1"id="div1">
+  <div class="uname" id="uname"></div>
+  <div class="date"id="date"></div>
+  <div class="heading"id="heading"></div>
+  <div class="mind"id="mind"></div>
 </div>
 
 
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
+  import { getDatabase,set,ref } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-database.js";
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyC7sikqnMQtH_02LqjFaqy-8PsVDI1er9s",
+    authDomain: "mini-hykathoun.firebaseapp.com",
+    databaseURL: "https://mini-hykathoun-default-rtdb.firebaseio.com",
+    projectId: "mini-hykathoun",
+    storageBucket: "mini-hykathoun.appspot.com",
+    messagingSenderId: "630508298169",
+    appId: "1:630508298169:web:583f91a10fc46386d76068"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db=getDatabase(app)
+
+
+
+  var name = document.getElementById("name")
+        var dat = document.getElementById("dat")
+        var heading = document.getElementById("headin")
+        var text = document.getElementById("text")
+
+        
+       
+publish.addEventListener("click",InsertData)
+
+  function InsertData() {
+    
+    if(name==""||dat==""||heading==""||text==""){
+  alert("Must provide input for all fields before publishing")
+}
+else{
+            set(ref(db, "The Dashboard" + name.value), {
+                Name: name.value,
+                Date: dat.value,
+                haeding: heading.value,
+                Mind:text.value
+            })
+                .then(() => {
+                    // Signed in 
+                    alert("datastored")
+                    // ...
+                    div1.innerHTML = `
+                <p>Name: ${name.value}</p>
+                <p>Date: ${dat.value}</p>
+                <p>Heading: ${heading.value}</p>
+                <p>Mind: ${text.value}</p>
+            `;
+        })
+                
+                .catch(() => {
+                    alert(" no datastored")
+                    // ..
+                });}
+              }
+
+
+
+
+</script>
 
 
 
@@ -64,10 +135,9 @@
 
 
 
-
-
+      </script>
 
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
-  </html>
+</html>

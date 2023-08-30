@@ -18,8 +18,10 @@ padding: 10px 20px;
 margin-left: 5%;
 }
 
+
 .navbar-right {
-margin-right: 5%;
+margin-right: 6%;
+
 }
 
 .navbar-heading-left,
@@ -167,5 +169,11 @@ border-radius:15px;
   padding: 20px 0;
 text-align: left;
 
+}
+.div1{
+  background-color: rgb(213, 209, 209);
+  width: 57%;
+  height: 200px;
+  margin-left: 21%;
 }
   

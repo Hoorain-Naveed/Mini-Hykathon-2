@@ -1,43 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet"href="./style4.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style4.css">
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="navbar-left">
-          <h1 class="navbar-heading-left">Personal Blogging App</h1>
-        </div>
-        <div class="navbar-right">
-          <h1 class="navbar-heading-right">Login</h1>
-        </div>
-      </nav>
-
-      <header class="main-header">
-        <div class="header-content">
-          <h1 class="header-heading-left">PROFILE</h1>
-        </div>
-      </header>
-
-<div class="container">
-    <div class="img"></div>
-    <div class="inputname"><input type="name"placeholder="username"></div>
-    <div class="password">
-<h>Password</h><br><br>
-        <input type="password"placeholder="Old password"> <br><br>
-        <input type="password"placeholder="new password"><br><br>
-        <input type="password"placeholder="Repeat password"><br><br>
-        <button class="responsive-button">Update password</button>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <h1 class="navbar-heading-left">Personal Blogging App</h1>
     </div>
-</div>
+    <div class="navbar-right">
+      <h1 class="navbar-heading-right">Login</h1>
+    </div>
+  </nav>
+
+  <header class="main-header">
+    <div class="header-content">
+      <h1 class="header-heading-left">PROFILE</h1>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="img"></div>
+    <div class="inputname"><input type="name" placeholder="username"id="username"></div>
+    <div class="password">
+      <h>Password</h><br><br>
+      <input type="password" placeholder="Old password"id="old"> <br><br>
+      <input type="password" placeholder="new password"id="new"><br><br>
+      <input type="password" placeholder="Repeat password"id="repeat"><br><br>
+      <button class="responsive-button"id="updbtn">Update password</button>
+    </div>
+  </div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
+ import { getDatabase ,  update,ref} from "https://www.gstatic.com/firebasejs/10.3.0/firebase-database.js";
+ 
+ // TODO: Add SDKs for Firebase products that you want to use
+ // https://firebase.google.com/docs/web/setup#available-libraries
+
+ // Your web app's Firebase configuration
+ const firebaseConfig = {
+   apiKey: "AIzaSyC7sikqnMQtH_02LqjFaqy-8PsVDI1er9s",
+   authDomain: "mini-hykathoun.firebaseapp.com",
+   projectId: "mini-hykathoun",
+   storageBucket: "mini-hykathoun.appspot.com",
+   messagingSenderId: "630508298169",
+   appId: "1:630508298169:web:583f91a10fc46386d76068"
+ };
+
+ // Initialize Firebase
+ const app = initializeApp(firebaseConfig);
+ const db=getDatabase(app)
+ updbtn.addEventListener("click", updateData)
+ function updateData() {
+ const oldpass=document.getElementById('old').value
+ const username=document.getElementById('username').value
+ const repass=document.getElementById('new').value
+ const newpass=document.getElementById('repeat').value
+
+
+
+            update(ref(db, "update password" + oldpass.value), {
+              username: username,
+            newpassword: newpass,
+            repeatpassword: repass
+                
+            })
+                .then(() => {
+                    // Signed in 
+                    alert("DATA UPDATED")
+                    // ...
+                })
+                .catch(() => {
+                    alert("DATA NOT UPDATED")
+                    // ..
+                });
+        }
+
+
+</script>
 
 
 
 
-
-      
 </body>
+
 </html>

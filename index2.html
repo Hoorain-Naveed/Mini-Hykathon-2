@@ -23,33 +23,64 @@
         </div>
       </header>
       <div class="centered-div">
-        <input type="text" class="input-field" placeholder="Username">
-        <input type="email" class="input-field" placeholder="Email">
-        <button class="custom-button" id="login"onclick="home()">Login</button>
+        <input type="password" class="input-field"id="password" placeholder="Password">
+        <input type="email" class="input-field"id="email" placeholder="Email">
+        <button class="custom-button" id="login"onclick="">Login</button>
       </div>
     
 
 
+   <script type="module">
+     // Import the functions you need from the SDKs you need
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
+ import { getDatabase ,  set,ref } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-database.js";
+ import { getAuth , signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
+ // TODO: Add SDKs for Firebase products that you want to use
+ // https://firebase.google.com/docs/web/setup#available-libraries
 
-      <script src="/index2.js"></script>
+ // Your web app's Firebase configuration
+ const firebaseConfig = {
+   apiKey: "AIzaSyC7sikqnMQtH_02LqjFaqy-8PsVDI1er9s",
+   authDomain: "mini-hykathoun.firebaseapp.com",
+   projectId: "mini-hykathoun",
+   storageBucket: "mini-hykathoun.appspot.com",
+   messagingSenderId: "630508298169",
+   appId: "1:630508298169:web:583f91a10fc46386d76068"
+ };
 
-    
+ // Initialize Firebase
+ const app = initializeApp(firebaseConfig);
+ const database=getDatabase(app)
+ const auth = getAuth();
+ document.addEventListener("DOMContentLoaded", () => {
+ const login = document.getElementById('login');
+ 
+
+login.addEventListener("click",(e)=>{
+ e.preventDefault();
+
+ const email=document.getElementById('email').value
+ const password=document.getElementById('password').value;
+
+ signInWithEmailAndPassword(auth,password, email)
+ .then((userCredential) => {
+   // Signed in 
+   const user = userCredential.user;
+   alert(user +"login")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-   
+   // ...
+   //////////////////REALTIME DATABASE SET/REF////////////////////
+ 
+ })
+ .catch((error) => {
+   const errorCode = error.code;
+   const errorMessage = error.message;
+   alert(errorMessage)
+   // ..
+ });
+})
+ })
+   </script>
 </body>
 </html>
