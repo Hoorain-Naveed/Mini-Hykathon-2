@@ -112,4 +112,40 @@ margin-left: 2%;
       width: 100%;
     }
   }
+  .navbar {
+    background-color: var(--primary-color, #7749F8);
+    overflow: hidden;
+    font-size: 24px;
+  }
+  
+  .navbar a {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .navbar a.left {
+    float: left;
+  }
+  .me{
+    margin-left: 45%;
+  }
+  .left{
+    margin-left: 6%;
+  }
+  .you{
+    margin-left: -15%;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .navbar a {
+      float: none;
+      text-align: left;
+    }
+    .navbar a.left {
+      float: none;
+    }
+  }
   
